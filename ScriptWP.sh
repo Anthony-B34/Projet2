@@ -1,7 +1,6 @@
 #!/bin/bash
 # ================================================
 # SCRIPT SIMPLE + CORRIGÉ : WordPress + Sécurité
-# Pour débutants - Tout est expliqué
 # ================================================
  
 echo "Mise à jour du système..."
@@ -58,7 +57,7 @@ findtime = 600
 bantime = 3600
 EOF
  
-# === LA BONNE REGEX (corrigée !) ===
+
 sudo bash -c 'cat > /etc/fail2ban/filter.d/wp-login.conf' <<EOF
 [Definition]
 failregex = ^<HOST> -.*POST /wp-login\.php HTTP.*
@@ -67,7 +66,7 @@ EOF
  
 sudo systemctl restart fail2ban
  
-# === FIN ===
+
 echo ""
 echo "WORDPRESS EST PRÊT !"
 echo "Va sur : http://localhost"
